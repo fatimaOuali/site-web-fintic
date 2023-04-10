@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Frontend\FavoriteController;
 
 Route::get('/', 'App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/propos', 'App\Http\Controllers\HomeController@propos')->name("propos.index");
@@ -25,20 +26,22 @@ Route::post('/commande/store', 'App\Http\Controllers\CommandeController@store')-
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index");
 Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("cart.delete");
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
-// admin/cart/'.$product->id.'/destroy
-// Route::get('/cart/{id}/destroy', 'App\Http\Controllers\CartController@destroy')->name("cart.destroy");
-// Route::get('/cart/{id}/destroy', 'App\Http\Controllers\CartController@destroy')->name("cart.destroy");
 
+    // /add-to-wishlist
+    Route::get('/addwishlist', 'App\Http\Controllers\Frontend\FavoriteController@add')->name("wishlist.add");
+    // /delete_wishlist
+    Route::get('/delete_wishlist', 'App\Http\Controllers\Frontend\FavoriteController@delete_wishlist')->name("wishlist.delete_wishlist");
+    
 
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')->name("cart.purchase");
     Route::get('/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')->name("myaccount.orders");
-    // Route::get('/my-account/orders/{id}/destroy', 'App\Http\Controllers\MyAccountController@destroy')->name("myaccount.orders.destroy");
-    Route::delete('/my-account/orders/{id}/delete', 'App\Http\Controllers\MyAccountController@delete')->name("myaccount.orders.delete");
-    
-    // myaccount/orders/'.$order->id.'/destroy
-    // myaccount.orders.delete
+   Route::delete('/my-account/orders/{id}/delete', 'App\Http\Controllers\MyAccountController@delete')->name("myaccount.orders.delete");
+  
+   // wicshlist
+   Route::get('/wishlist', 'App\Http\Controllers\Frontend\FavoriteController@index')->name("wishlist.index");
+
 });
 
     

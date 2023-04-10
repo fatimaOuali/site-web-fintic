@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
+  
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -124,12 +127,16 @@
       
 <a id="a_panier" href="{{ route('cart.index') }}"><i class="fa-solid fa-cart-shopping"></i> Mon panier</a>
     </div>
+    <li  class="nav-item">
+      <a id="a_panier" href="{{route("wishlist.index")}}" class="nav-link">
+        <i class="fa fa-heart" style="color: #8755a8;font-size:4vh;"></i>
+         Favoris
+      </a>
+
+            </li>
             <div class="icon-menu1">
                 <i class="fa-solid fa-bars" id="icon"></i>
             </div>
- 
-           
-
         </div>
         
 {{-- -------------- --}}
@@ -179,13 +186,12 @@
                             </div>
                             <div class="col-md-6 item text">
                                 <h3>FINTIC</h3>
-                                <p>Praesent sed lobortis mi.
-                                     Suspendisse vel placerat ligula.
-                                      Vivamus ac sem lacus.
-                                       Ut vehicula rhoncus elementum.
-                                        Etiam quis tristique lectus.
-                                         Aliquam in arcu eget velit
-                                          pulvinar dictum vel in justo.</p>
+                                <p>FINTIC est une jeune entreprise dynamique
+                                   spécialisée depuis 2016 dans le conseil et les services en nouvelles 
+                                   technologies actives au Maroc. Elle assiste les entreprises de toutes tailles, 
+                                   les PME comme les grandes entreprises, les organisations, les associations nationales,
+                                    les administrations publiques et les collectivités locales. Ainsi que elle les conseille et les accompagne dans la conception de tous les systèmes d’information concernant les programmes de gestion, dans la conception et la réalisation de leurs 
+                                  projets internet et fournit à ses clients tous les logiciels indispensables et légaux.</p>
                             </div>
                             <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
                         </div>

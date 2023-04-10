@@ -77,7 +77,7 @@ Dashboard
 
 <div class="col-md-3">
     <div class="card card-body bg-primary text-white mb-3">
-<label for="">All Users</label>
+<label for="">All Clients</label>
 <h1>{{$viewData["TotalAllUsers"]}}</h1>
 <a id="view" href="{{ route('admin.clients.index') }}">Plus infos</a>
     </div>

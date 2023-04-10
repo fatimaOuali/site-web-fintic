@@ -2,11 +2,21 @@
 @section('title', $viewData["title"])
 @section('content')
 <!-- About us section start -->
+@if(session('status'))
+<script>
+  smal('{{session('status')}}')
+  </script>
+  @endif
 
 <div class="about">
     <div class="slide active">
     <div class="container">
-        <div class="row">
+      @if(session()->has('message'))
+      <div class="alert alert-success">
+        {{session('message') }}
+      </div>
+      @endif
+        <div class="row product_data">
             <div class="col-lg-6 col-md-12">
                 <div class="content">
                 <h1 class="heading-content fw-bold">{{ $viewData["product"]["name"] }} </h1>
@@ -16,12 +26,16 @@
 {{ $viewData["product"]->getName() }} ({{ $viewData["product"]->getPrice() }}DH)</h5>
     
     </p>
-    <p class="paragraph" >
-        {{ $viewData["product"]->getDescription() }}
-    </p>
+    <div class="col-md-6 item text">
+      <h3>Detail</h3>
+      <p>{{ $viewData["product"]->getDescription() }}</p>
+      </div>
+  
     {{-- <a href="#" class="link-contact"> <span class="btn-hover">
     
     </span> Add to Cart</a> --}}
+  <input type="hidden" value="{{$viewData['product']->getId()}}" class="product_id">      
+
     <p class="card-text">
         <form method="POST" action="{{ route('cart.add', ['id'=> $viewData['product']->getId()]) }}">
         <div class="row">
@@ -33,10 +47,13 @@
         </div>
         </div>
         <div class="col-auto">
-        <button class="btn bg-primary text-white" type="submit">Ajouter au panier</button>
+        <button  class="btn bg-primary text-white" type="submit">Ajouter au panier</button>
+        
         </div>
         </div>
         </form>
+<button type="button" class="btn btn-sucess  me-3 addToWishlist float-start" >ajouter au favoris</button> 
+       
         </p>
         
                     </div>
@@ -212,6 +229,31 @@
         opacity: 1;
       }
       </style>
+      <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+      <script src = "https://ajax.aspnetCDN.com/ajax/jQuery/jQuery-3.3.1.min.js"></script>
+    
+        <script>
+          $(document).ready(function() {
+        $('.addToWishlist').click(function(e) {
+      e.preventDefault();
+      var product_id = $(this).closest('.product_data').find('.product_id').val();
+       
+    
+     
+    
+      $.ajax({
+        methode: "POST",
+        url: "/addwishlist",
+        data:{
+          'product_id':product_id,
+        },
+        success:function(response){
+          swal(response.status);
+        }
+      })
+    });
+    });
+        </script>
 @endsection
 
   

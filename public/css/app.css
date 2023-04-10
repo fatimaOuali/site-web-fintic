@@ -116,6 +116,9 @@ body{
     
 
 }
+.nav-item{
+    font-size: 30px;
+}
 .icon-panier{
     font-size: 30px;
     cursor: pointer;

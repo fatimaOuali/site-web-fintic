@@ -20,7 +20,7 @@
     <!-- sidebar -->
     <div id="admin_space" class="p-3 col fixed text-white ">
       <a href="{{ route('admin.home.index') }}" class="text-white text-decoration-none">
-        <span class="fs-4">Admin Panel</span>
+        <span class="fs-4">Panneau d'administration</span>
       </a>
       <hr />
       <ul class="nav flex-column">
