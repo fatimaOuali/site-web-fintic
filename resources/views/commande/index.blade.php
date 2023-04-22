@@ -43,7 +43,7 @@
       </div>
 
       <div class="form-field col-lg-6">
-        <input id="name" class="input-text js-input"  type="number" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus required>
+        <input id="telephone" class="input-text js-input"  type="phone" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus required>
         <label class="label" for="telephone">votre téléphone</label>
         @error('telephone')
         <span class="invalid-feedback" role="alert">

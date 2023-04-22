@@ -1,41 +1,7 @@
 @extends('layouts.app')
 @section('title', $viewData["title"])
-@section('subtitle', $viewData["subtitle"])
 @section('content')
-{{-- <div class="body_pn">
-<section id="section_pn">
-    <!--for demo wrap-->
-    <h1 id="pan_h1">Mon panier</h1>
-    <div class="tbl-header">
-      <table id="table_pan" cellpadding="0" cellspacing="0" border="0">
-        <thead>
-          <tr id="tr_pn">
-            <th id="th_pn">Code</th>
-            <th id="th_pn">Company</th>
-            <th id="th_pn">Price</th>
-            <th id="th_pn">Change</th>
-            <th id="th_pn">Change %</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div class="tbl-content">
-      <table id="table_pan" cellpadding="0" cellspacing="0" border="0">
-        <tbody>
-          <tr id="tr_pn">
-            <td id="td_pn">AAC</td>
-            <td id="td_pn">AUSTRALIAN COMPANY </td>
-            <td id="td_pn">$1.38</td>
-            <td id="td_pn">+2.01</td>
-            <td id="td_pn">-0.36%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-  
-</div> --}}
-  
+
 <div class="body_pn">
     <section id="section_pn">
 <div >
@@ -54,9 +20,9 @@
 @foreach ($viewData["products"] as $product)
 <tr >
     <td id="td_pn">
-        @if ($product->productImages->count() > 0)
-        <img class="imgPro" src="{{ 'storage/'.$product->productImages->first()->url }}" >
-         @endif
+      @if ($product->productImage->count() > 0)
+      <img  src="{{ $product->productImage->image }}" height="100px" width="100px">
+  @endif
     </td>
 <td id="td_pn">{{ $product->getName() }}</td>
 <td id="td_pn">{{ $product->getPrice() }}DH</td>

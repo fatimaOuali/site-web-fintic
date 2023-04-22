@@ -15,6 +15,7 @@ class FavoriteController extends Controller
         $viewData = [];
         $viewData["title"] = "Products - Online Store";
         $viewData["favoris"] = Wishlist::where('user_id', Auth::id())->get();
+        // $viewData["products"] = Product::findOrFail(Auth::user()->id);
         return view('wishlist.index')->with("viewData", $viewData);
     }
 

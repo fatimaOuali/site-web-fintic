@@ -34,7 +34,7 @@
    <form class="contact-form row" method="POST" action="{{ route('message.store') }}">
     @csrf
       <div class="form-field col-lg-6">
-         <input id="name" class="input-text js-input"  type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus required>
+         <input id="name" class="input-text js-input"   type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus required>
          <label class="label" for="name">Name</label>
          @error('name')
          <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
       
       
        <div class="form-field col-lg-6 ">
-         <input id="phone" type="email" class="input-text js-input" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" required>
+         <input id="phone" type="email"  class="input-text js-input" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" required>
          <label class="label" for="email">Email</label>
          @error('email')
          <span class="invalid-feedback" role="alert">

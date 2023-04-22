@@ -47,14 +47,15 @@
         </div>
         </div>
         <div class="col-auto">
-        <button  class="btn bg-primary text-white" type="submit">Ajouter au panier</button>
+        <button id="btn_favoris2" class="btn btn-sucess  me-3 float-start"  type="submit" >Ajouter au panier</button>
         
         </div>
         </div>
         </form>
-<button type="button" class="btn btn-sucess  me-3 addToWishlist float-start" >ajouter au favoris</button> 
+<button type="button" id="btn_favoris" class="btn btn-sucess  me-3 addToWishlist float-start"><i class="fa fa-heart" id="btn_heart"></i>ajouter au favoris</button> 
        
         </p>
+    
         
                     </div>
     
@@ -137,7 +138,55 @@
       * {
         box-sizing: border-box;
       }
-      
+      #btn_heart{
+        color: #ffffff;
+        font-size:2.5vh;
+        margin-right: 4px;
+      }
+      #btn_heart:hover{
+        color: red;
+      }
+      #btn_favoris{
+        margin-left: 350px;
+        margin-top: -38px;
+        /* text-transform: uppercase; */
+        background-image: linear-gradient(to right top, #67165e,
+    #f6a7ff,#e600ad,#b204c5);
+    border-radius: 10px;
+    z-index: 5;
+    position: relative;
+      }
+      #btn_favoris:hover {
+        position: absolute;
+   
+    background-image: linear-gradient(to right , #ef16ce,
+    rgb(217, 0, 255) , #ff00ea, #f338d0,#d60fbf);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: -1;
+    transition: 0.6s ease-in-out;
+      }
+
+      #btn_favoris2{ 
+        background-image: linear-gradient(to right top, #67165e,
+    #f6a7ff,#e600ad,#b204c5);
+    border-radius: 10px;
+    z-index: 5;
+    position: relative;
+    
+      }
+
+      #btn_favoris2:hover {
+        position: absolute;
+   
+    background-image: linear-gradient(to right , #ef16ce,
+    rgb(217, 0, 255) , #ff00ea, #f338d0,#d60fbf);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: -1;
+    transition: 0.6s ease-in-out;
+      }
+
       img {
         vertical-align: middle;
       }

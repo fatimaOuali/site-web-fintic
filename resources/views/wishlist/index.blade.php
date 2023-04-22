@@ -6,16 +6,19 @@
   smal('{{session('status')}}')
   </script>
   @endif
-<div class="container my-5">
-    <div class="card shadow">
+<div class="container my-5" id="all_whl">
+    <div class="card shadow" id="card_whishis">
         <div class="card-body">
   @if($viewData["favoris"]->count()>0)
   @foreach($viewData["favoris"] as $item)
   <div class="row product_data">
     <div class="col-md-2 my-auto">
-        <img src="{{asset('storage/app/public'.$item->products->productImages[0]->image)}}" height="70px" width="70px" alt="">
-    </div>
-<div class="col-md-2 my-auto">
+      @if ($item->products->productImage->count() > 0)
+      {{-- <img class="imgPro" src="{{ $product->productImage->image }}" > --}}
+        <img src="{{asset($item->products->productImage->image)}}" height="90px" width="90px" alt="">
+    @endif
+      </div>
+<div class="col-md-2 my-auto" >
   <h6>{{$item->products->name}}</h6>
 </div>
 <div class="col-md-2 my-auto">
@@ -62,4 +65,15 @@ $.ajax({
 });
 });
   </script>
+
+  <style>
+    #card_whishis{
+      width: 105%;
+    }
+    #all_whl{
+      font-size: 30px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      
+    }
+  </style>
 @endsection

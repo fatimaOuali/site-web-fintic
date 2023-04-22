@@ -42,6 +42,12 @@ Route::middleware('auth')->group(function () {
    // wicshlist
    Route::get('/wishlist', 'App\Http\Controllers\Frontend\FavoriteController@index')->name("wishlist.index");
 
+
+   Route::get('/profile', 'App\Http\Controllers\Frontend\UserController@index')->name("profile.index");
+ 
+   Route::post('/modifierprofile', 'App\Http\Controllers\Frontend\UserController@updateProfile')->name("profile.updateProfile");
+   Route::get('/monprofile', 'App\Http\Controllers\Frontend\UserController@show')->name("profile.show");
+
 });
 
     

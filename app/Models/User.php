@@ -138,6 +138,11 @@ public function setOrders($orders)
 {
 $this->orders = $orders;
 }
+  // userDtail()
+  public function userDtail()
+  {
+      return $this->hasOne(Profile::class, 'user_id', 'id');
+  }
 
 
 }

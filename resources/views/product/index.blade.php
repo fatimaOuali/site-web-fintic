@@ -59,7 +59,10 @@
                                   <a id="a_all" class="a_catalogue" href="{{ route('product.index')}}">Catalogue</a>
                                   <ul id="ul_catalogue" class="sub">
                                     @foreach($viewData['categories'] as $category)
-                                    <li class="li_catalogue"><a id="a_all"class="a_catalogue" href="{{ route('product.category', $category->id) }}">{{ $category->name }}</a></li>
+                                    <li class="li_catalogue">
+                                      <a id="a_all"class="a_catalogue" href="{{ route('product.category', $category->id) }}">
+                                      {{ $category->name }}
+                                    </a></li>
                                     
                                     @endforeach
                                   </ul>
@@ -86,8 +89,8 @@
                     <li class="header">
                         <a id="a_all"href="{{ route('product.show', ['id'=> $product->getId()]) }}">
                           {{-- <img class="imgPro" src="{{ asset('/storage/'.$product->image) }}" alt=""> --}}
-                          @if ($product->getProductImages()->count() > 0)
-                          <img class="imgPro" src="{{ 'storage/'.$product->getProductImages()->first()->url }}" >
+                          @if ($product->productImage->count() > 0)
+                          <img class="imgPro" src="{{ $product->productImage->image }}" >
                       @endif
                         </a></li>
                     <li class="emph">

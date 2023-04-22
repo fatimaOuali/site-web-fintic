@@ -18,7 +18,7 @@ class ProductController extends Controller
         $viewData["categories"] = Category::all();
         $viewData["title"] = "Products - FINTIC";
         // $viewData["product_imag"] = Product_images::all();
-        $viewData["products"] = Product::with('productImages')->orderBy('created_at', 'DESC')->get();
+        $viewData["products"] = Product::orderBy('created_at', 'DESC')->get();
         return view('product.index')->with("viewData", $viewData);
     }
 
@@ -44,7 +44,7 @@ class ProductController extends Controller
 
     public function showByCategory($categoryId)
     {
-        $viewData["products"] = Product::where('category_id', $categoryId)->get();
+        $viewData["products"] = Product::orderBy('created_at', 'DESC')->where('category_id', $categoryId)->get();
         $viewData["categories"] = Category::all();
         $viewData["title"] = "Products - FINTIC";
     

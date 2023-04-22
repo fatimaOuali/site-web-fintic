@@ -75,14 +75,23 @@ class Product extends Model
     {
       return $this->hasMany(Product_images::class,'product_id', 'id');
     }
-    public function getProductImages()
-            {
-            return $this->productImages;
-            }
-    public function setProductImages($productImages)
-            {
-            $this->productImages = $productImages;
-            }
+
+    public function productImage()
+    {
+      return $this->hasOne(Product_images::class,'product_id', 'id');
+    }
+
+
+
+
+    // public function getProductImages()
+    //         {
+    //         return $this->productImages;
+    //         }
+    // public function setProductImages($productImages)
+    //         {
+    //         $this->productImages = $productImages;
+    //         }
 
     public function getPrice()
     {

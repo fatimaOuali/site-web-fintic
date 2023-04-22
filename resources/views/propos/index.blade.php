@@ -9,12 +9,11 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="content">
         <h1 class="heading-content fw-bold">à propos de fintic</h1>
-        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet excepturi odit blanditiis fugiat magnam veritatis quod necessitatibus, hic incidunt nesciunt sequi totam, error nostrum voluptatem, placeat consequuntur officiis tenetur animi.
-        
+        <p class="paragraph">
+            FINTIC est une jeune entreprise dynamique spécialisée depuis 2016 dans le conseil et les services en nouvelles technologies actives au Maroc.
+             Elle assiste les entreprises de toutes tailles, les PME comme les grandes entreprises, les organisations, les associations nationales, les administrations publiques et les collectivités locales. Ainsi que elle les conseille et les accompagne dans la conception de tous les systèmes d’information concernant les programmes de gestion, dans la conception et la réalisation de leurs projets internet et fournit à ses clients tous les logiciels indispensables et légaux.
         </p>
-        <p class="paragraph" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, ea vero esse error ut molestiae a perferendis aspernatur labore cum impedit odit dolorem voluptatibus in repellat rem asperiores.
-        
-        </p>
+       
         <a href="{{ route('message.index') }}" class="link-contact"> <span class="btn-hover">
         
         </span> Contact</a>
@@ -51,14 +50,17 @@
     <div class="col-lg-6">
         <div class="content_me">
             <h4 class="heading_me_content">
-               Hi, my name is fatima
+                Domaines d’activité
             </h4>
             <p class="para_content_me">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                <span>Quasi, totam? Soluta laborum molestias deserunt quae </span>
-                    recusandae voluptatibus iure, quod non quos veritatis, 
-                    distinctio reiciendis optio minus,
-                      repudiandae officiis odio magnam?
+                Création des applications et  <span>(des sites WEB)</span>. 
+                Réparation et maintenance informatique.
+                Formations et cours informatique .
+                Vente et achat des accessoires informatiques  <span>(PC, Tablette…)</span>.
+                Installation des caméras de surveillance et réseaux Internet
+                Service technique : Informatique et Téléphonique<span> (ADSL, WIFI …)</span>.
+                Communication  Publicité et Distribution : <span> cartes visites, les Flyers, Logo …</span> 
+
 
             </p>
         </div>

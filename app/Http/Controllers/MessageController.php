@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\Message;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Mail;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class MessageController extends Controller
 {
@@ -23,6 +24,7 @@ class MessageController extends Controller
      {
          $viewData = [];
          $viewData["message"] = Message::all();
+        //  User::findOrFail(Auth::user()->id);
          $viewData["title"] = "message - FINTIC";
          return view('message.index')->with("viewData", $viewData);
      }

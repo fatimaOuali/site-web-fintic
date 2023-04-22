@@ -63,9 +63,8 @@
                     <li class="header">
                         <a id="a_all"href="{{ route('product.show', ['id'=> $productItem->getId()]) }}">
                           {{-- <img class="imgPro" src="{{ asset('/storage/'.$product->image) }}" alt=""> --}}
-                          @if ($productItem->productImages->count() > 0)
-                          <img class="imgPro" src="{{ 'storage/'.$productItem->productImages->first()->url }}" >
-                      @endif
+                          @if ($productItem->productImage->count() > 0)
+                          <img class="imgPro" src="{{ $productItem->productImage->image }}" > @endif
                         </a></li>
                     <li class="emph">
                         <strong>{{ $productItem->getName() }}</strong> </li>

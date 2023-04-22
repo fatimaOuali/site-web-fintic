@@ -25,9 +25,9 @@
       <hr />
       <ul class="nav flex-column">
         <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">Accueil Administrateur</a></li>
-        <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">Gestion Products</a></li>
-        <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">Gestion Categories</a></li>
-        <li><a href="{{ route('admin.clients.index') }}" class="nav-link text-white">Gestion clients</a></li>
+        <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white"> Products</a></li>
+        <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white"> Categories</a></li>
+        <li><a href="{{ route('admin.clients.index') }}" class="nav-link text-white">Gestion comptes</a></li>
         <li><a href="{{ route('admin.message.index') }}" class="nav-link text-white">Messages des clients</a></li>
         <li><a href="{{ route('admin.commande.index') }}" class="nav-link text-white">Gestion commande avec adressage</a></li> 
         <li><a href="{{ route('admin.orders.orders') }}" class="nav-link text-white">Gestion commandes</a></li> 

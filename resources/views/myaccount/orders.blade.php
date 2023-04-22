@@ -26,9 +26,9 @@
     @foreach ($order->getItems() as $item)
   <tr >
       <td id="td_pn">
-          @if ($order->productImages)
-          <img class="imgPro" src="{{ 'storage/'.$order->productImages }}" >
-           @endif
+           @if ($item->product->productImage->count() > 0)
+           <img class="imgPro" src="{{ $item->product->productImage->image }}" >
+       @endif
       </td>
   <td id="td_pn"><a class="link-success" href="{{ route('product.show', ['id'=> $item->getProduct()->getId()]) }}">
     {{ $item->getProduct()->getName() }}
@@ -45,11 +45,11 @@
   <a class="btn btn-outline-secondary mb-2"><b>Le total :</b> DH{{ $order->getTotal() }}</a>
   <a class="btn btn-outline-secondary mb-2"><b>Date :</b> {{  $order->getCreatedAt()  }}</a>
 {{-- <a class="btn btn-outline-secondary mb-2" href="{{ url('myaccount/orders/'.$order->id.'/delete')}}" class="d-block"> --}}
-  <form action="{{ route('myaccount.orders.delete', $order->id) }}" method="POST">
+  {{-- <form action="{{ route('myaccount.orders.delete', $order->id) }}" method="POST">
     @csrf
     @method('DELETE')
     <button class="btn btn-outline-secondary mb-2" type="submit" class="btn btn-danger">Delete</button>
-</form>
+</form> --}}
 
   
   </div>

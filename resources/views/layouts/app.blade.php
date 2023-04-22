@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/4c729db828.js' crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  
+  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
   
@@ -42,9 +50,18 @@
                 <ul>
 
 
+                  {{-- <div class="text-center">
+                    @if ($viewData["profile"]->userDtail)
+                    <img  src="{{ asset('/storage/'.$viewData["profile"]->userDtail->image) }}"  width="160" class="rounded-circle">
+                    <span id="name_size" > {{ $viewData["profile"]->name}}</span>
+                    @else 
+                    <img  src="{{ asset('/img/user.jpg')}}"  width="160" class="rounded-circle">
+                    <span id="name_size" > {{ $viewData["profile"]->name}}</span>
+                 @endif
+                </div>  --}}
             
              {{-- <a class="nav-link active" href="{{ route('product.index') }}">Products</a> --}}
-
+          
     <div class="dropdown">
         <li class="list-items" >
             <a href="{{ route('product.index') }}" class="links-items">
@@ -80,15 +97,8 @@
                                     </div>
                                   </div>
                             </li>
-                            {{-- <div class="dropdown">
-                                <li class="list-items" ><a href="{{ route('cart.index') }}" class="links-items">
-                                    <button class="dropbtn">Mon panier</button></a>
-                                        <div class="dropdown-content">
-                                          
-                                        </div>
-                                      </div>
-                                </li> --}}
-                            {{-- <a class="nav-link active" href="{{ route('cart.index') }}">Cart</a> --}}
+                          
+
                             @guest
                             <div class="dropdown">
                                <li class="list-items" >
@@ -101,6 +111,11 @@
                            </div>
                        </li>
                             @else
+                            <div class="dropdown">
+                              <li class="list-items" >
+                           <a href="{{ route('profile.show') }}" class="links-items"><button class="dropbtn">Mon profile</button></a>
+                          </div>
+                      </li>
                             <div class="dropdown">
                                 <li class="list-items" >
                              <a href="{{ route('myaccount.orders') }}" class="links-items"><button class="dropbtn">Mon commande</button></a>
@@ -115,6 +130,7 @@
                                @csrf
                                </form>
                                @endguest
+                 
                 </ul>
                 
             </div>
