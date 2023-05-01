@@ -51,6 +51,7 @@ class CommandeController extends Controller
             'product' => $data['product'],
             'adresse' => $data['adresse'],
         ]);
+        
     }
     public function store(Request $request)
     {
@@ -63,7 +64,7 @@ class CommandeController extends Controller
 
          $viewData["commande"] ->save();
 
-         return back()->with('success', 'Message Envoyé avec succes.');
+         return back()->with('success', 'votre demande a été envoyé');
         
     }
 }

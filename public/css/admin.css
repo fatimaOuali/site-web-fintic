@@ -1,3 +1,15 @@
+
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color:rgb(196, 26, 248);
+    border-radius: 30px;
+}
+
 .copyright {
     background-color: #460a52;
     }
@@ -6,7 +18,7 @@
     flex: 0 0 250px;
     }
     .content-grey {
-    background-color: #f8f9fc;
+    background-color: #fbe0ed;
     }
     hr {
     margin-top: 0.8em;
@@ -23,7 +35,11 @@
     }
     #admin_space{
     background-color: #460a52;
+    width: 20%;
 
+    }
+    #ajoute_prodcut{
+        background-color: #460a52;
     }
    
     .card-header {

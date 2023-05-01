@@ -14,7 +14,8 @@
              Elle assiste les entreprises de toutes tailles, les PME comme les grandes entreprises, les organisations, les associations nationales, les administrations publiques et les collectivités locales. Ainsi que elle les conseille et les accompagne dans la conception de tous les systèmes d’information concernant les programmes de gestion, dans la conception et la réalisation de leurs projets internet et fournit à ses clients tous les logiciels indispensables et légaux.
         </p>
        
-        <a href="{{ route('message.index') }}" class="link-contact"> <span class="btn-hover">
+        <a href="{{ route('message.index') }}" class="link-contact">
+             <span class="btn-hover">
         
         </span> Contact</a>
                         </div>

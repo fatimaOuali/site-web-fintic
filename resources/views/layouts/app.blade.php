@@ -65,7 +65,7 @@
     <div class="dropdown">
         <li class="list-items" >
             <a href="{{ route('product.index') }}" class="links-items">
-            <button class="dropbtn">Produit</button></a>
+            <button class="dropbtn">Produits</button></a>
               </div>
        </li>
     <div class="dropdown"> 
@@ -77,7 +77,7 @@
        <div class="dropdown"> 
         <li class="list-items" >
             <a href="{{ route('commande.index') }}" class="links-items">
-            <button class="dropbtn">commande</button></a>
+            <button class="dropbtn">Demandes de livraison</button></a>
               </div>
        </li>
                     {{-- <div class="dropdown">

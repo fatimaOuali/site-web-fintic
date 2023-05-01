@@ -58,7 +58,7 @@
       <div class="mb-3">
         <label class="form-label">Category</label>
         <select name="category" id="category">
-            <option value="">--SELECT CATEGORY--</option>
+            <option value="">SELECT CATEGORY</option>
             @foreach ($viewData['categories'] as $category)
                 <option value="{{$category->getId()}}">{{$category->getName()}}</option>
             @endforeach
@@ -68,7 +68,7 @@
         <label class="form-label">Description</label>
         <textarea class="form-control" name="description" rows="3">{{ old('description') }}</textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" id="ajoute_prodcut" class="btn btn-primary">Ajouter</button>
     </form>
   </div>
 </div>
@@ -99,8 +99,8 @@
           <td>{{$product->category->name}}</td>
           <td>{{ $product->getDescription() }}</td>
           <td>
-            <a class="btn btn-primary" href="{{route('admin.product.edit', ['id'=> $product->getId()])}}">
-              <i class="bi-pencil"></i>
+            <a id="ajoute_prodcut" class="btn btn-primary" href="{{route('admin.product.edit', ['id'=> $product->getId()])}}">
+              <i id="ajoute_prodcut" class="bi-pencil"></i>
             </a>
           </td>
           <td>

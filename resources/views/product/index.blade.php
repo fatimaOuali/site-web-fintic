@@ -20,29 +20,12 @@
           <img src="{{ asset('/img/logo2.png') }}" class="logo-img" alt="logo of webs" >
       </a>
       </div>
-      
+      <div class="search-container">
       <form  action="{{ url('search')}}" method="GET" role="search">
-        <div class="d-flex justify-content-center h-100">
-          <div class="search">
-              <input type="search" name="search" value="" class="search-input" placeholder="Search your product">
-          <button  type="submit">
-              <a  class="search-icon">
-                <i class="fa-solid fa-magnifying-glass" style="color: #66238b;"></i>
-                
-              </a>
-          </button>
-
-          </div>
+        <input type="search" placeholder="Search your product" name="search">
+              <button type="submit"><i id="search_icon" class="fa fa-search"></i></button> 
       </div>
-        {{-- <div class="input-group">
-          <input type="search" name="search" value="" placeholder="Search your product" class="form-control" />
-          <button class="btn bg-white" type="submit">
-            <i class="fa fa-search"></i>
-      
-          </button>
-      
-        </div> --}}
-      
+    </div>
       </form>
   </header>
     
@@ -90,11 +73,11 @@
                         <a id="a_all"href="{{ route('product.show', ['id'=> $product->getId()]) }}">
                           {{-- <img class="imgPro" src="{{ asset('/storage/'.$product->image) }}" alt=""> --}}
                           @if ($product->productImage->count() > 0)
-                          <img class="imgPro" src="{{ $product->productImage->image }}" >
+                          <img class="imgPro" src="/{{ $product->productImage->image }}" >
                       @endif
                         </a></li>
                     <li class="emph">
-                        <strong>{{ $product->getName() }}</strong> </li>
+                        <strong>{{ $product->getName() }}</strong></li>
                     <li>
                         <strong>{{ $product->getPrice() }} DH</strong></li>
                     <li class="emph">
@@ -199,56 +182,42 @@ $("a").on('click', function (event) {
     } // End if
 });
     </script>
+    <style>
+
+
+
+.search-container {
+  float: right;
+}
+
+input[type=search] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ba86b1;
+}
+
+
+    </style>
 </body>
 
 </html>
 
-{{-- @extends('layouts.app')
-@section('title', $viewData["title"])
-@section('content')
 
-<h2 class="headings">notre produit</h2>
-    <div class="container">
-      <div class="row">
-        <!-- Sidebar -->
-  <nav id="sidebarMenu" >
-    <div class="position-sticky">
-        <ul class="menu cf">
-          <li>
-            <a href="{{ route('product.index')}}">catalogue</a>
-            <ul class="submenu">
-              @foreach($viewData['categories'] as $category)
-              <li><a href="{{ route('product.category', $category->id) }}">{{ $category->name }}</a></li>
-              @endforeach
-            </ul>			
-          </li>
-        </ul>
-    </div>
-  </nav>
-  <!-- Sidebar -->
-
- 
-@foreach ($viewData["products"] as $product)
-<div class="col-md-4 col-lg-4 mb-2">
-<div class="card">
-  <div class="background-card img-1 card-img-top">
-  <a href="{{ route('product.show', ['id'=> $product->getId()]) }}">
-<img src="{{ asset('/storage/'.$product->getImage()) }}" class="card-img-top img-card">
-</a>
-<div class="card-headings">
-<div class="card-body ">
-  <div >
-    <h5 class="card-title">
-{{ $product->getName() }}
-</h5>
-<h5 class="price-card">{{ $product->getPrice() }} DH</h5>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-@endforeach 
-@endsection --}}
 
 

@@ -9,7 +9,7 @@
         <div class="d-flex justify-content-center h-100">
             <div id="card_liogin" class="card" >
                 <div id="card_header_login" class="card-header">
-                    <h3>{{ __('Reset Password') }}</h3>
+                    <h3>{{ __('réinitialiser le mot de passe') }}</h3>
                 </div>
                 <div id="card_liogin" class="card-body">
                     @if (session('status'))
@@ -24,7 +24,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="username">
+                            <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="enter email">
                             @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
                         
                         <div class="form-group">
                             <button type="submit" id="log" class="btn btn-light">
-                                {{ __('Send Password Reset Link') }}
+                                {{ __('Envoyer un lien de réinitialisation de mot de passe') }}
                                 </button>                       
                         </div>
                     </form>

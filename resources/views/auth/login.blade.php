@@ -76,7 +76,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div id="card_liogin" class="card" >
 			<div id="card_header_login" class="card-header">
-				<h3>{{ __('Login') }}</h3>
+				<h3>{{ __('Connexion') }}</h3>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -109,15 +109,15 @@
                     @enderror
 					</div>
 					<div class="row align-items-center remember">
-						<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>{{ __('Remember Me') }}
+						<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>{{ __('se souvenir') }}
 					</div>
 					<div class="form-group">
                         <button type="submit" id="log" class="btn btn-light">
-                             {{ __('Login') }}
+                             {{ __('Connexion') }}
                             </button>
                         @if (Route::has('password.request'))
                                     <a  id="log" class="btn btn-light" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Mot de passe oublié ?') }}
                                     </a>
                                 @endif                        
 					</div>

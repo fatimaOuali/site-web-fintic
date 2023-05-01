@@ -12,6 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   
   <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
+  {{-- <link href="{{ asset('/css/btn_plus.css') }}" rel="stylesheet" /> --}}
   <title>@yield('title', 'Admin - FINTIC')</title>
 </head>
 
@@ -24,27 +25,27 @@
       </a>
       <hr />
       <ul class="nav flex-column">
-        <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">Accueil Administrateur</a></li>
-        <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white"> Products</a></li>
-        <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white"> Categories</a></li>
-        <li><a href="{{ route('admin.clients.index') }}" class="nav-link text-white">Gestion comptes</a></li>
-        <li><a href="{{ route('admin.message.index') }}" class="nav-link text-white">Messages des clients</a></li>
-        <li><a href="{{ route('admin.commande.index') }}" class="nav-link text-white">Gestion commande avec adressage</a></li> 
-        <li><a href="{{ route('admin.orders.orders') }}" class="nav-link text-white">Gestion commandes</a></li> 
+        <li><a href="{{ route('admin.home.index') }}" class="link-contact"> <span class="btn-hover"></span>Accueil Administrateur</a></li>
+        <li><a href="{{ route('admin.product.index') }}" class="link-contact"><span class="btn-hover"></span> Products</a></li>
+        <li><a href="{{ route('admin.category.index') }}" class="link-contact"><span class="btn-hover"></span> Categories</a></li>
+        <li><a href="{{ route('admin.clients.index') }}" class="link-contact"><span class="btn-hover"></span>Gestion comptes</a></li>
+        <li><a href="{{ route('admin.message.index') }}" class="link-contact"><span class="btn-hover"></span>Messages des clients</a></li>
+        <li><a href="{{ route('admin.commande.index') }}" class="link-contact"><span class="btn-hover"></span>Gestion commande avec adressage</a></li> 
+        <li><a href="{{ route('admin.orders.orders') }}" class="link-contact"><span class="btn-hover"></span>Gestion commandes</a></li> 
 
 
-
-        <li>
-         <a href="{{ route('home.about') }}" class="mt-2 btn bg-primary text-white"> <i id="icon_dc" class="fa-solid fa-circle-left"></i> Déconnexion</a>
+    
+        <li >
+         <a id="icon_dc" href="{{ route('home.about') }}" class="mt-2 btn  text-white"> <i class="fa-solid fa-circle-left"></i> Déconnexion</a>
         </li>
       </ul>
     </div>
     <!-- sidebar -->
     <div class="col content-grey">
-      <nav class="p-3 shadow text-end">
+      {{-- <nav class="p-3 shadow text-end">
         <span class="profile-font">Admin</span>
         <img class="img-profile rounded-circle" src="{{ asset('/img/undraw_profile.svg') }}">
-      </nav>
+      </nav> --}}
 
       <div class="g-0 m-5">
         @yield('content')
@@ -71,6 +72,59 @@
     .fa-solid{
       size: 200px;
     }
+    #icon_dc{
+      background-color: #fc61dd
+    }
+
+
+
+
+
+
+.link-contact{
+    text-decoration: none;
+    display: inline-block;
+    text-transform: lowercase;
+    font-size: 19px;
+    padding: 12px 20px;
+    background-image: linear-gradient(to right top, #460a52,
+    #460a52,#460a52,#460a52);
+    color: white;
+    border-radius: 10px;
+    margin: 6px 0px;
+    z-index: 5;
+    position: relative;
+
+}
+.btn-hover{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0%;
+    height: 100%;
+    background-image: linear-gradient(to right , #ff85e7,
+    #ff85e7 , #ff85e7, #ff85e7,#ff85e7);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: -1;
+    transition: 0.6s ease-in-out;
+
+
+}
+.link-contact:hover{
+    color: white;
+}
+.link-contact:hover .btn-hover{
+    width: 100%;
+
+}
+
+
+
+
+
+
+
   </style>
 </body>
 

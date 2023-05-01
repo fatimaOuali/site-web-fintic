@@ -81,7 +81,7 @@
         <div class="d-flex justify-content-center h-100">
             <div id="card_liogin" class="card" >
                 <div id="card_header_login" class="card-header">
-                    <h3>{{ __('Register') }}</h3>
+                    <h3>{{ __('Inscription') }}</h3>
                     <div class="d-flex justify-content-end social_icon">
                         <span><i class="fab fa-facebook-square"></i></span>
                         <span><i class="fab fa-google-plus-square"></i></span>
@@ -138,7 +138,7 @@
                         {{-- confirm pasword --}}
                         <div class="form-group">
                             <button type="submit" id="log" class="btn btn-light">
-                                {{ __('Register') }}
+                                {{ __('Connexion') }}
                                 </button>
                                                   
                         </div>
