@@ -262,8 +262,13 @@ a:link{
   }
   /* catalogue */
 .imgPro{
-    width: 100%;
-    height: 50%;
+  /* width: 100%;
+  height: 50%; */
+}
+#img_ind{
+  width: 50%;
+  height: 50%;
+
 }
 
 html {
@@ -408,6 +413,8 @@ section h3 {
     border: 1px solid #f3b57d;
     margin: 0;
     padding: 0;
+    width: 90%;
+    height: 90%;
     transition: 1s;
 }
 

@@ -32,7 +32,7 @@ class FavoriteController extends Controller
                 $wish->product_id=$product_id;
                 $wish->user_id = Auth::id();
                 $wish->save();
-         return response()->json(['status' => 'product added to wish list']);
+         return response()->json(['status' => 'Produit ajouté à la liste des favoris']);
 
             }
             else {

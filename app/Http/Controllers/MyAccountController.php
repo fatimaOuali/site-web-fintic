@@ -13,10 +13,9 @@ public function orders()
 $viewData = [];
 $viewData["title"] = "My Orders - FINTIC";
 $viewData["subtitle"] = "My Orders";
-$viewData["orders"] = Order::with(['items.product'])->where('user_id', Auth::user()->getId())->get();
-// $viewData["products"] = Product::orderBy('created_at', 'DESC')->get();
-
-// $viewData["items"] = Item::all();
+$viewData["orders"] = Order::with(['items.product'])->where('user_id', Auth::id())->get();
+// $viewData["favoris"] = Wishlist::where('user_id', Auth::id())->get();
+// $viewData["products"] = Product::findOrFail(Auth::user()->id);
 return view('myaccount.orders')->with("viewData", $viewData);
 }
 
@@ -34,9 +33,5 @@ public function delete($id)
     return redirect()->route('myaccount.orders')->with('success', 'Order has been deleted.');
 }
 
-// public function delete($id)
-// {
-//     Order::destroy($id);
-//     return back();
-// }
+
 }

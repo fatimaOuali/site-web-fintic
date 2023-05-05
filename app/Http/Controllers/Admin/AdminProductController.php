@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Item;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -56,9 +57,23 @@ class AdminProductController extends Controller
 
     public function delete($id)
     {
-        Product::destroy($id);
+       
+       // Find the parent record you want to delete
+$product = Product::find($id);
+
+// Find all the child records that reference the parent record
+$items = Item::where('product_id', $id)->get();
+
+// Delete the child records one by one
+foreach ($items as $item) {
+    $item->delete();
+}
+
+// Delete the parent record
+$product->delete();
+        // Product::destroy($id);
         return back();
-    }
+}
 
     public function edit($id)
     {

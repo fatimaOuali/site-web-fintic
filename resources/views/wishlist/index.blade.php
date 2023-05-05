@@ -23,7 +23,7 @@
 </div>
 <div class="col-md-2 my-auto">
     <input type="hidden" class="product_id" value="{{$item->product_id}}">
-    <h6>{{$item->products->price}}</h6>
+    <h6>{{$item->products->price}} DH</h6>
   </div>
   <div class="col-md-2 my-auto">
     <button class="btn btn-danger remove_wishlist ">

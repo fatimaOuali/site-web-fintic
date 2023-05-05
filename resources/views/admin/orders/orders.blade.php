@@ -49,7 +49,7 @@
             
             {{$item->getOrder()->getTotal() }}</td>
           <td>
-<a href="{{ url('admin/orders/'.$item->id.'/delete')}}" class="d-block"><i id="icon_itm_delete" class="bi-trash"></i></a>
+<a href="{{ url('admin/orders/'.$item->id.'/destroy')}}" class="d-block"><i id="icon_itm_delete" class="bi-trash"></i></a>
             
            
             {{-- <form  action="{{ route('admin.orders.delete', )}}" method="POST">

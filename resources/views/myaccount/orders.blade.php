@@ -26,9 +26,10 @@
     @foreach ($order->getItems() as $item)
   <tr >
       <td id="td_pn">
-           @if ($item->product->productImage->count() > 0)
-           <img class="imgPro" src="{{ $item->product->productImage->image }}" >
-       @endif
+        @if ($item->getProduct()->productImage->count() > 0)
+        {{-- <img class="imgPro" src="{{ $product->productImage->image }}" > --}}
+          <img src="{{asset($item->getProduct()->productImage->image)}}" height="90px" width="90px" alt="">
+      @endif
       </td>
   <td id="td_pn"><a class="link-success" href="{{ route('product.show', ['id'=> $item->getProduct()->getId()]) }}">
     {{ $item->getProduct()->getName() }}

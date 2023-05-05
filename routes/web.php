@@ -71,7 +71,7 @@ Route::get('/admin/message', 'App\Http\Controllers\Admin\AdminMessageController@
 Route::delete('/admin/message/{id}/delete', 'App\Http\Controllers\Admin\AdminMessageController@delete')->name("admin.message.delete");
 
 Route::get('/admin/orders', 'App\Http\Controllers\Admin\AdminOrdresController@orders')->name("admin.orders.orders");
-Route::delete('/admin/orders/{id}/delete', 'App\Http\Controllers\Admin\AdminOrdresController@delete')->name("admin.orders.delete");
+// Route::delete('/admin/orders/{id}/delete', 'App\Http\Controllers\Admin\AdminOrdresController@delete')->name("admin.orders.delete");
 
 
 Route::get('/admin/commande', 'App\Http\Controllers\Admin\AdminCommandeController@index')->name("admin.commande.index");

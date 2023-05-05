@@ -206,7 +206,7 @@ ul .links-items{
 
 .content{
     width: 100%;
-    height: 41vh;
+    height: auto;
     padding: 21px;
     background-color: rgba(143, 72, 142, 0.81);
     border-radius: 4px 15px 3px 8px;

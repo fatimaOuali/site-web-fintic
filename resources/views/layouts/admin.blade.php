@@ -25,12 +25,12 @@
       </a>
       <hr />
       <ul class="nav flex-column">
-        <li><a href="{{ route('admin.home.index') }}" class="link-contact"> <span class="btn-hover"></span>Accueil Administrateur</a></li>
+        <li><a href="{{ route('admin.home.index') }}" class="link-contact"> <span class="btn-hover"></span>Accueil Admin</a></li>
         <li><a href="{{ route('admin.product.index') }}" class="link-contact"><span class="btn-hover"></span> Products</a></li>
         <li><a href="{{ route('admin.category.index') }}" class="link-contact"><span class="btn-hover"></span> Categories</a></li>
         <li><a href="{{ route('admin.clients.index') }}" class="link-contact"><span class="btn-hover"></span>Gestion comptes</a></li>
         <li><a href="{{ route('admin.message.index') }}" class="link-contact"><span class="btn-hover"></span>Messages des clients</a></li>
-        <li><a href="{{ route('admin.commande.index') }}" class="link-contact"><span class="btn-hover"></span>Gestion commande avec adressage</a></li> 
+        <li><a href="{{ route('admin.commande.index') }}" class="link-contact"><span class="btn-hover"></span>Demandes de livraison</a></li> 
         <li><a href="{{ route('admin.orders.orders') }}" class="link-contact"><span class="btn-hover"></span>Gestion commandes</a></li> 
 
 

@@ -19,22 +19,14 @@
          <a href="{{ route('home.about') }}"> 
           <img src="{{ asset('/img/logo2.png') }}" class="logo-img" alt="logo of webs" >
       </a>
-      </div>
-      <form  action="{{ url('search')}}" method="GET" role="search">
-       
-        <div class="d-flex justify-content-center h-100">
-          <div class="search">
-              <input type="search" name="search" value="" class="search-input" placeholder="Search your product">
-          <button  type="submit">
-              <a  class="search-icon">
-                <i class="fa-solid fa-magnifying-glass" style="color: #66238b;"></i>
-                
-              </a>
-          </button>
 
-          </div>
       </div>
-      
+     <div class="search-container">
+      <form  action="{{ url('search')}}" method="GET" role="search">
+        <input type="search" placeholder="Search your product" name="search">
+              <button type="submit"><i id="search_icon" class="fa fa-search"></i></button> 
+      </div>
+    </div>
       </form>
   </header>
     
@@ -60,11 +52,11 @@
             <div class="col order">
               
                 <ul class="price-box">
-                    <li class="header">
+                    <li >
                         <a id="a_all"href="{{ route('product.show', ['id'=> $productItem->getId()]) }}">
                           {{-- <img class="imgPro" src="{{ asset('/storage/'.$product->image) }}" alt=""> --}}
                           @if ($productItem->productImage->count() > 0)
-                          <img class="imgPro" src="{{ $productItem->productImage->image }}" > @endif
+                          <img id="img_ind" class="imgPro" src="{{ $productItem->productImage->image }}" > @endif
                         </a></li>
                     <li class="emph">
                         <strong>{{ $productItem->getName() }}</strong> </li>
@@ -174,6 +166,38 @@ $("a").on('click', function (event) {
     } // End if
 });
     </script>
+        <style>
+
+
+
+            .search-container {
+              float: right;
+            }
+            
+            input[type=search] {
+              padding: 6px;
+              margin-top: 8px;
+              font-size: 17px;
+              border: none;
+            }
+            
+            .search-container button {
+              float: right;
+              padding: 6px 10px;
+              margin-top: 8px;
+              margin-right: 16px;
+              background: #ddd;
+              font-size: 17px;
+              border: none;
+              cursor: pointer;
+            }
+            
+            .search-container button:hover {
+              background: #ba86b1;
+            }
+            
+            
+                </style>
 </body>
 
 </html>

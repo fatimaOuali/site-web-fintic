@@ -29,7 +29,7 @@
     </div>
 
 <section class="get-in-touch">
-   <h1 class="title">Commande</h1>
+   <h1 class="title">Demandes de livraison</h1>
    <form class="contact-form row" method="POST" action="{{ route('commande.store') }}">
     @csrf
       <div class="form-field col-lg-6">

@@ -69,11 +69,11 @@
             <div class="col order">
               
                 <ul class="price-box">
-                    <li class="header">
+                    <li class=" ">
                         <a id="a_all"href="{{ route('product.show', ['id'=> $product->getId()]) }}">
                           {{-- <img class="imgPro" src="{{ asset('/storage/'.$product->image) }}" alt=""> --}}
                           @if ($product->productImage->count() > 0)
-                          <img class="imgPro" src="/{{ $product->productImage->image }}" >
+                          <img id="img_ind" class="imgPro" src="/{{ $product->productImage->image }}" >
                       @endif
                         </a></li>
                     <li class="emph">

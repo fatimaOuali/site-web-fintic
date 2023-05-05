@@ -198,10 +198,10 @@
       .container {
         position: relative;
       }
-      /* #image_slid{
-        width: 100%;
-        height: 100%;
-      } */
+       #image_slid{
+       font-size: 41vh;
+       position: center ;
+      } 
       /* Hide the images by default */
       .mySlides {
         display: none;
