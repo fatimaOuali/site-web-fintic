@@ -11,7 +11,8 @@
         <h1 class="heading-content fw-bold">à propos de fintic</h1>
         <p class="paragraph">
             FINTIC est une jeune entreprise dynamique spécialisée depuis 2016 dans le conseil et les services en nouvelles technologies actives au Maroc.
-             Elle assiste les entreprises de toutes tailles, les PME comme les grandes entreprises, les organisations, les associations nationales, les administrations publiques et les collectivités locales. Ainsi que elle les conseille et les accompagne dans la conception de tous les systèmes d’information concernant les programmes de gestion, dans la conception et la réalisation de leurs projets internet et fournit à ses clients tous les logiciels indispensables et légaux.
+             Elle assiste les entreprises de toutes tailles, les PME comme les grandes entreprises, les organisations, 
+             les associations nationales, les administrations publiques et les collectivités locales. Ainsi que elle les conseille et les accompagne dans la conception de tous les systèmes d’information concernant les programmes de gestion, dans la conception et la réalisation de leurs projets internet et fournit à ses clients tous les logiciels indispensables et légaux.
         </p>
        
         <a href="{{ route('message.index') }}" class="link-contact">

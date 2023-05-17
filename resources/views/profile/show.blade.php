@@ -157,30 +157,30 @@
                
     
                 <div class="text-center">
-                    @if ($viewData["profile"]->userDtail)
-                    <img  src="{{ asset('/storage/'.$viewData["profile"]->userDtail->image) }}"  width="160" height="150"  class="rounded-circle">
-                    @else 
-                    <img  src="{{ asset('/img/user.jpg')}}"  width="160" class="rounded-circle">
-                 @endif
+                   
+                    <img  src="{{ asset('/storage/'.$viewData["profile"]->image) }}"  width="160" height="150"  class="rounded-circle">
+                     
+                    
+               
                 </div> 
                 
                 <div class="text-center mt-3">
                     <span id="name_size" class="bg-secondary p-1 px-4 rounded text-white">{{ $viewData["profile"]->name}}</span>
                     <h5 class="mt-2 mb-0">{{ $viewData["profile"]->email}}</h5>
-                    @if ($viewData["profile"]->userDtail)
-                    <span>{{ $viewData["profile"]->userDtail->phone}}</span>
-                    @else 
-                    <span></span>
+                   
+                    <span>{{ $viewData["profile"]->phone}}</span>
+                     
+                  
 
-                 @endif
+               
                     
                     <div class="px-4 mt-1">
-                        @if ($viewData["profile"]->userDtail)
-     <p class="fonts">{{ $viewData["profile"]->userDtail->address}}  </p>
-                    @else 
-     <p class="fonts"> </p>
+                       
+     <p class="fonts">{{ $viewData["profile"]->address}}  </p>
+                     
+    
 
-                    @endif
+                  
 
                     </div>
                     
@@ -189,7 +189,6 @@
                         <li><a href="{{ route('wishlist.index') }}"><i class="fa fa-heart"></i></a></li>
                         <li> <a  href="{{ route('cart.index') }}"><i class="fa-solid fa-cart-shopping"></i></a></li>
                         <li><a  href="{{ route('message.index') }}"><i class="fa-solid fa-message"></i></a></li>
-                        {{-- <li><a  href="{{ route('commande.index') }}"><i class="fa-thin fa-command"></i></a></li> --}}
                     </ul>
                     
                     <div class="buttons">

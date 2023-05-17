@@ -1,10 +1,12 @@
 <?php
 namespace App\Http\Controllers;
-use App\Models\Product;
-use App\Models\Order;
 use App\Models\Item;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class CartController extends Controller
 {
 public function index(Request $request)
@@ -23,13 +25,20 @@ $viewData["total"] = $total;
 $viewData["products"] = $productsInCart;
 return view('cart.index')->with("viewData", $viewData);
 }
+
+
+// add to cart
 public function add(Request $request, $id)
 {
 $products = $request->session()->get("products");
 $products[$id] = $request->input('quantity');
-$request->session()->put('products', $products);
+$request->session()->put('products', $products); 
 return redirect()->route('cart.index');
 }
+
+
+
+
 public function delete(Request $request)
 {
 $request->session()->forget('products');

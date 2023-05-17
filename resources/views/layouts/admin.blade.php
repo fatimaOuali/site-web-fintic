@@ -13,7 +13,7 @@
   
   <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
   {{-- <link href="{{ asset('/css/btn_plus.css') }}" rel="stylesheet" /> --}}
-  <title>@yield('title', 'Admin - FINTIC')</title>
+  <title>@yield('title', 'FINTIC')</title>
 </head>
 
 <body>
@@ -30,11 +30,7 @@
         <li><a href="{{ route('admin.category.index') }}" class="link-contact"><span class="btn-hover"></span> Categories</a></li>
         <li><a href="{{ route('admin.clients.index') }}" class="link-contact"><span class="btn-hover"></span>Gestion comptes</a></li>
         <li><a href="{{ route('admin.message.index') }}" class="link-contact"><span class="btn-hover"></span>Messages des clients</a></li>
-        <li><a href="{{ route('admin.commande.index') }}" class="link-contact"><span class="btn-hover"></span>Demandes de livraison</a></li> 
         <li><a href="{{ route('admin.orders.orders') }}" class="link-contact"><span class="btn-hover"></span>Gestion commandes</a></li> 
-
-
-    
         <li >
          <a id="icon_dc" href="{{ route('home.about') }}" class="mt-2 btn  text-white"> <i class="fa-solid fa-circle-left"></i> Déconnexion</a>
         </li>
@@ -97,6 +93,8 @@
 
 }
 .btn-hover{
+    text-decoration: none;
+    display: inline-block;
     position: absolute;
     top: 0%;
     left: 0%;

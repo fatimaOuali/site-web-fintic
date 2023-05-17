@@ -74,12 +74,7 @@
             <button class="dropbtn">à propos</button></a>
               </div>
        </li>
-       <div class="dropdown"> 
-        <li class="list-items" >
-            <a href="{{ route('commande.index') }}" class="links-items">
-            <button class="dropbtn">Demandes de livraison</button></a>
-              </div>
-       </li>
+      
                     {{-- <div class="dropdown">
                         <li class="list-items" ><a href="#" class="links-items">
                             <button class="dropbtn">formation</button></a>
@@ -189,7 +184,7 @@
                                 <ul id="footer_ul" >
                                     <li><a id="footer_a"  href="{{ route('cart.index') }}">mon panier</a></li>
                                     <li><a id="footer_a" href="{{ route('product.index') }}">produit</a></li>
-                                    <li><a id="footer_a" href="{{ route('commande.index') }}">commande</a></li>
+                                    {{-- <li><a id="footer_a" href="{{ route('commande.index') }}">commande</a></li> --}}
                                 </ul>
                             </div>
                             <div class="col-sm-6 col-md-3 item">

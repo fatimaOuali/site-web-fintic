@@ -18,7 +18,7 @@
 </thead>
 <tbody  cellpadding="0" cellspacing="0" border="0">
 @foreach ($viewData["products"] as $product)
-<tr >
+<tr>
     <td id="td_pn">
       @if ($product->productImage->count() > 0)
       <img  src="{{ $product->productImage->image }}" height="100px" width="100px">

@@ -2,7 +2,7 @@
 @section('title', 'User Profile')
 @section('content')
 
-<div class="py-5">
+<div class="py-5" style="background-image: url(/img/profilemod.png)">
     <div class="container">
         <div class="row justify-content-center">
         <div class="col-md-10">
@@ -27,8 +27,8 @@
         </ul>
         @endif
 <div class="card shadow">
-    <div class="card-header bg-primary">
-        <h4>User Details</h4>
+    <div class="card-header " style="background-color: rgb(213, 183, 242)">
+        <h4>Modifier les informations personnelles</h4>
     </div>
 <div class="card-body">
     <form action="{{ url('modifierprofile')}}" method="POST" enctype="multipart/form-data">
@@ -36,12 +36,14 @@
     <div class="row">
         <div class="col">
           <div class="mb-3 row">
-            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Image</label>
+            <div class="text-center">
+                <img  src="{{ asset('/storage/'.$viewData["profile"]->image) }}"  width="160" height="150"  class="rounded-circle">
+            </div> 
             <div class="col-lg-10 col-md-6 col-sm-12">
               <input class="form-control" id="profile_image"  type="file" name="image">
-              @if (Auth::user()->image)
-              <img src="{{ asset('storage/image/'.Auth::user()->image) }}" alt="Profile Image">
-            @endif
+              
+              <img src="{{ asset('img/'.Auth::user()->image) }}" alt="">
+            
             </div>
           </div>
         </div>
@@ -49,24 +51,11 @@
           &nbsp;
         </div>
       </div>
-    {{-- <div class="row">
-        <div class="col">
-        <div class="mb-3 row">
-        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Image</label>
-        <div class="col-lg-10 col-md-6 col-sm-12">
-        <input class="form-control" id="profile_image" type="file" name="image">
-        </div>
-        </div>
-        </div>
-        <div class="col">
-        &nbsp;
-        </div>
-        </div> --}}
 
     <div class="row">
 <div class="col-md-6">
         <div class="mb-3">
-            <label for="">Username</label>
+            <label for="">nom et prenom</label>
             <input type="text" name="username" value="{{ Auth::user()->name }}" class="form-control" />
         </div> 
 </div>
@@ -80,29 +69,24 @@
 
 <div class="col-md-6">
     <div class="mb-3">
-        <label for="">phone number</label>
-        <input type="text" name="phone" value="{{ Auth::user()->userDtail->phone ?? '' }}" class="form-control" />
+        <label for="">telephone</label>
+        <input type="text" name="phone" value="{{ Auth::user()->phone  }}" class="form-control" />
     </div> 
 </div>
 
-<div class="col-md-6">
-    <div class="mb-3">
-        <label for="">Zip/pin code</label>
-        <input type="text" name="pin_code" value="{{ Auth::user()->userDtail->pin_code ?? '' }}" class="form-control" />
-    </div> 
-</div>
+
 
 <div class="col-md-6">
     <div class="mb-3">
         <label for="">address</label>
-        <textarea type="text" name="address"  class="form-control"  rows="5" >{{ Auth::user()->userDtail->address ?? '' }}</textarea>
+        <textarea type="text" name="address"  class="form-control"  rows="5" >{{ Auth::user()->address  }}</textarea>
            
     </div> 
 </div>
 <div class="col-md-12">
-<button class="btn bg-primary text-white" type="submit">save data</button>
+<button class="btn text-black" type="submit" style="background-color: rgb(213, 183, 242)">enregistrer</button>
 <a href="{{route('profile.show')}}">
-<button class="btn bg-primary text-white" type="button">profile</button>
+<button class="btn text-black" type="button" style="background-color: rgb(213, 183, 242)">profile</button>
 </a>
 </div>
 

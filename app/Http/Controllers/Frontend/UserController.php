@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\User;
-use App\Models\Profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +14,11 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
    public function index(){
-    return view('profile.index');
+    $viewData = [];
+    $profile = User::findOrFail(Auth::user()->id);
+    $viewData["title"] = $profile->name." ";
+    $viewData["profile"] = $profile;
+    return view('profile.index')->with("viewData", $viewData);
 
    }
 
@@ -38,8 +41,9 @@ public function show()
 
     $request->validate([
       'username' => ['required', 'string'],
-      'phone' => ['required', 'digits:10'],
-      'pin_code' => ['required', 'digits:6'],
+      'phone' => ['required'],
+      // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+      // , 'digits:10'
       'address' => ['required', 'string', 'max:499'],
     ]);
     
@@ -64,24 +68,15 @@ public function show()
   }
       $user = User::findOrFail(Auth::user()->id);
       $user->update([
-        'name' => $request->username
-      ]);
-      $user->userDtail()->updateOrCreate(
-        [
-          'user_id' =>$user->id,
-        ],
-        [
-          'phone'=> $request->phone,
-        'pin_code'=> $request->pin_code,
-        'image'=> $progile_image ?? auth()->user()->image,
+        'name' => $request->username,
+        'phone'=> $request->phone,
+        // 'email' => $request->email,
         'address'=> $request->address,
-        ]
+        'image'=> $progile_image ?? auth()->user()->image,
+      ]);
 
-      );
-
-
-        
       return redirect()->back()->with('message', 'user profile updated');
+      
      }
 
      

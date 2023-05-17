@@ -2,8 +2,8 @@
 @section('title', $viewData["title"])
 @section('content')
 <div class="card mb-4">
-  <div class="card-header">
-    Create Products
+  <div class="card-header" style="background-color: rgb(215, 176, 251);">
+    Ajouter Produits
   </div>
   <div class="card-body">
     @if($errors->any())
@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col">
           <div class="mb-3 row">
-            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Name:</label>
+            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nom:</label>
             <div class="col-lg-10 col-md-6 col-sm-12">
               <input name="name" value="{{ old('name') }}" type="text" class="form-control">
             </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="col">
           <div class="mb-3 row">
-            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Price:</label>
+            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Prix:</label>
             <div class="col-lg-10 col-md-6 col-sm-12">
               <input name="price" value="{{ old('price') }}" type="number" class="form-control">
             </div>
@@ -58,7 +58,7 @@
       <div class="mb-3">
         <label class="form-label">Category</label>
         <select name="category" id="category">
-            <option value="">SELECT CATEGORY</option>
+            <option value="">Catalogue</option>
             @foreach ($viewData['categories'] as $category)
                 <option value="{{$category->getId()}}">{{$category->getName()}}</option>
             @endforeach
@@ -74,20 +74,20 @@
 </div>
 
 <div class="card">
-  <div class="card-header">
-    Manage Products
+  <div class="card-header" style="background-color: rgb(215, 176, 251);">
+    Manage Produits
   </div>
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead>
-        <tr>
+        <tr style="background-color: rgb(215, 176, 251);">
           <th scope="col">ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Category</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Catalogue</th>
           <th scope="col">Description</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
+          <th scope="col">Modifier</th>
+          <th scope="col">Supprime</th>
         </tr>
       </thead>
       <tbody>
@@ -99,15 +99,15 @@
           <td>{{$product->category->name}}</td>
           <td>{{ $product->getDescription() }}</td>
           <td>
-            <a id="ajoute_prodcut" class="btn btn-primary" href="{{route('admin.product.edit', ['id'=> $product->getId()])}}">
-              <i id="ajoute_prodcut" class="bi-pencil"></i>
+            <a  class="btn btn-primary" style="background-color: blueviolet; border-radius: 20px;" href="{{route('admin.product.edit', ['id'=> $product->getId()])}}">
+              <i  class="bi-pencil"></i>
             </a>
           </td>
           <td>
             <form action="{{ route('admin.product.delete', $product->getId())}}" method="POST">
               @csrf
               @method('DELETE')
-              <button class="btn btn-danger">
+              <button class="btn btn-danger" style="background-color: rgb(252, 31, 186); border-radius: 20px;">
                 <i class="bi-trash"></i>
               </button>
             </form>

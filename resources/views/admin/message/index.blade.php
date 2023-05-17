@@ -10,18 +10,18 @@
   @endif
 </div>
 <div class="card">
-  <div class="card-header">
+  <div class="card-header" style="background-color: rgb(206, 158, 255);">
     Gestion des massages
   </div>
   <div class="card-body">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" style="background-color: rgb(235, 216, 252);">
       <thead>
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Name</th>
+          <th scope="col">Nom</th>
           <th scope="col">email</th>
           <th scope="col">Messages</th>
-          <th scope="col">Delete</th>
+          <th scope="col">Supprime</th>
         </tr>
       </thead>
       <tbody>
@@ -35,7 +35,7 @@
             <form  action="{{ route('admin.message.delete', $message->getId())}}" method="POST">
               @csrf
               @method('DELETE')
-              <button  class="btn btn-danger">
+              <button  class="btn btn-danger" style="background-color: rgb(252, 31, 186); border-radius: 20px;">
                 <i class="bi-trash"></i>
               </button>
             </form>

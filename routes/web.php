@@ -19,8 +19,8 @@ Route::get('/products/category/{categoryId}', 'App\Http\Controllers\ProductContr
 Route::get('/contact', 'App\Http\Controllers\MessageController@index')->name("message.index");
 Route::post('/contact/store', 'App\Http\Controllers\MessageController@store')->name("message.store");
 
-Route::get('/commande', 'App\Http\Controllers\CommandeController@index')->name("commande.index");
-Route::post('/commande/store', 'App\Http\Controllers\CommandeController@store')->name("commande.store");
+// Route::get('/commande', 'App\Http\Controllers\CommandeController@index')->name("commande.index");
+// Route::post('/commande/store', 'App\Http\Controllers\CommandeController@store')->name("commande.store");
 
 
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index");
@@ -62,6 +62,8 @@ Route::put('/admin/products/{id}/update', 'App\Http\Controllers\Admin\AdminProdu
 Route::get('/admin/product-image/{image_id}/delete', 'App\Http\Controllers\Admin\AdminProductController@delete_image')->name("admin.product.delete_image");
 // admin/orders/'.$order->id.'/destroy
 Route::get('/admin/orders/{id}/destroy', 'App\Http\Controllers\Admin\AdminOrdresController@destroy')->name("admin.orders.destroy");
+Route::get('/admin/orders', 'App\Http\Controllers\Admin\AdminOrdresController@orders')->name("admin.orders.orders");
+// Route::delete('/admin/orders/{id}/delete', 'App\Http\Controllers\Admin\AdminOrdresController@delete')->name("admin.orders.delete");
 
 
 Route::get('/admin/clients', 'App\Http\Controllers\Admin\UserController@index')->name("admin.clients.index");
@@ -70,12 +72,10 @@ Route::delete('/admin/clients/{id}/delete', 'App\Http\Controllers\Admin\UserCont
 Route::get('/admin/message', 'App\Http\Controllers\Admin\AdminMessageController@index')->name("admin.message.index");
 Route::delete('/admin/message/{id}/delete', 'App\Http\Controllers\Admin\AdminMessageController@delete')->name("admin.message.delete");
 
-Route::get('/admin/orders', 'App\Http\Controllers\Admin\AdminOrdresController@orders')->name("admin.orders.orders");
-// Route::delete('/admin/orders/{id}/delete', 'App\Http\Controllers\Admin\AdminOrdresController@delete')->name("admin.orders.delete");
 
 
-Route::get('/admin/commande', 'App\Http\Controllers\Admin\AdminCommandeController@index')->name("admin.commande.index");
-Route::delete('/admin/commande/{id}/delete', 'App\Http\Controllers\Admin\AdminCommandeController@delete')->name("admin.commande.delete");
+// Route::get('/admin/commande', 'App\Http\Controllers\Admin\AdminCommandeController@index')->name("admin.commande.index");
+// Route::delete('/admin/commande/{id}/delete', 'App\Http\Controllers\Admin\AdminCommandeController@delete')->name("admin.commande.delete");
 
 Route::get('/admin/categories', 'App\Http\Controllers\Admin\AdminCategoryController@index')->name("admin.category.index");
 Route::post('/admin/categories/store', 'App\Http\Controllers\Admin\AdminCategoryController@store')->name("admin.category.store");

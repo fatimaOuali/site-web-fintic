@@ -10,21 +10,23 @@
   @endif
 </div>
 <div class="card">
-  <div class="card-header">
+  <div class="card-header" style="background-color: rgb(206, 158, 255);">
     Gestion des Orders
   </div>
   <div class="card-body">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" style="background-color: rgb(235, 216, 252);">
       <thead>
         <tr>
           <th scope="col">Orders ID</th>
-          <th scope="col">Name</th>
-          <th scope="col">Product Name</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Nom de Produit</th>
           <th scope="col">email</th>
+          <th scope="col">telephone</th>
+          <th scope="col">adresse</th>
           <th scope="col">Quantity</th>
           <th scope="col">Date</th>
           <th scope="col">total</th>
-          <th scope="col">Delete</th>
+          <th scope="col">Supprime</th>
         </tr>
       </thead>
       <tbody>
@@ -40,6 +42,8 @@
             </a>
         </td>
         <td>{{  $item->getOrder()->getUser()->getEmail() }}</td>
+        <td>{{  $item->getOrder()->getUser()->getPhone() }}</td>
+        <td>{{  $item->getOrder()->getUser()->getAddress() }}</td>
             <td>
               
               {{  $item->getQuantity()  }}
@@ -49,7 +53,7 @@
             
             {{$item->getOrder()->getTotal() }}</td>
           <td>
-<a href="{{ url('admin/orders/'.$item->id.'/destroy')}}" class="d-block"><i id="icon_itm_delete" class="bi-trash"></i></a>
+<a href="{{ url('admin/orders/'.$item->id.'/destroy')}}" class="d-block" ><i id="icon_itm_delete" class="bi-trash"></i></a>
             
            
             {{-- <form  action="{{ route('admin.orders.delete', )}}" method="POST">

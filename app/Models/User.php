@@ -38,6 +38,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'address',
+        'image',
         'password',
         'balance',
     ];
@@ -77,6 +80,38 @@ public function setName($name)
 {
 $this->attributes['name'] = $name;
 }
+// phone
+
+public function getPhone()
+{
+return $this->attributes['phone'];
+}
+public function setPhone($phone)
+{
+$this->attributes['phone'] = $phone;
+}
+
+// address
+
+public function getAddress()
+{
+return $this->attributes['address'];
+}
+public function setAddress($address)
+{
+$this->attributes['address'] = $address;
+}
+// image
+
+public function getImage()
+{
+return $this->attributes['image'];
+}
+public function setImage($image)
+{
+$this->attributes['image'] = $image;
+}
+
 public function getEmail()
 {
 return $this->attributes['email'];
@@ -138,11 +173,7 @@ public function setOrders($orders)
 {
 $this->orders = $orders;
 }
-  // userDtail()
-  public function userDtail()
-  {
-      return $this->hasOne(Profile::class, 'user_id', 'id');
-  }
+ 
 
 
 }
